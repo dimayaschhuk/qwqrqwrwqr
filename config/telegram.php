@@ -31,6 +31,7 @@ return [
     |                       Acme\Project\Commands\BotFather\ByeCommand::class,
     |             ]
     */
+    'bot_token'=>env('TELEGRAM_BOT_TOKEN','779486044:AAGWMV_GKkmMJ-_J7DIWEZ7PPCXHsxvKdKA'),
     'bots'                         => [
         'mybot' => [
             'username'            => 'TelegramBot',
