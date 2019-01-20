@@ -46,9 +46,9 @@ class SettingController extends Controller
     public function sendTelegramData($route = '', $params = [], $method = 'POST')
     {
 
-        $client = new \GuzzleHttp\Client(['base_uri' => 'https://api.telegram.org.bot/' . \Telegram::getAccessToken() . '/']);
+        $client = new \GuzzleHttp\Client(['base_uri' => 'https://api.telegram.org/bot' . \Telegram::getAccessToken() . '/']);
 
-        dd($method, $route, $params);
+
         $result = $client->request( $method, $route, $params);
 
         return (string)$result->getBody();
