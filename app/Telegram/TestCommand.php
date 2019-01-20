@@ -11,7 +11,7 @@ class TestCommand extends Command
 
     protected $name = 'test';
 
-    
+
     protected $description = 'TestCommand command, Get a list of commands';
 
     public function handle()

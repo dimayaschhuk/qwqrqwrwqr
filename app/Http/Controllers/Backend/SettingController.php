@@ -31,7 +31,7 @@ class SettingController extends Controller
     public function setWebHook(Request $request){
 
         $result= $this->sendTelegramData('setwebhook',[
-            'query'=>['url'=>$request->url  . \Telegram::getAccessToken()]
+            'query'=>['url'=>$request->url .'/' . \Telegram::getAccessToken()]
         ]);
 
         return redirect()->route('admin.setting.index')->with('status',$result);
@@ -47,10 +47,8 @@ class SettingController extends Controller
     {
 
         $client = new \GuzzleHttp\Client(['base_uri' => 'https://api.telegram.org/bot' . \Telegram::getAccessToken() . '/']);
-
-
         $result = $client->request( $method, $route, $params);
 
-        return (string)$result->getBody();
+        return (string) $result->getBody();
     }
 }
