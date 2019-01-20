@@ -2,38 +2,30 @@
 
 namespace App\Telegram;
 
+use App\User;
 use Telegram\Bot\Commands\Command;
 use Telegram\Bot\Actions;
 
 class TestCommand extends Command
 {
-    /**
-     * @var string Command Name
-     */
-    protected $name = 'help';
 
-    /**
-     * @var array Command Aliases
-     */
+    protected $name = 'test';
+
+
     protected $aliases = ['listcommands'];
 
-    /**
-     * @var string Command Description
-     */
     protected $description = 'TestCommand command, Get a list of commands';
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle()
     {
-        $commands = $this->telegram->getCommands();
-
-        $text = '';
-        foreach ($commands as $name => $handler) {
-            $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
-        }
+        $this->replyWithChatAction(['action'=>Actions::TYPING]);
+        $user=User::find(1);
+        $this->replyWithMessage(['text'=>'Поста пользоваткля а в :' .$user->email]);
+        $telegramUser=\Telegram::getWebhookUpdates()['message'];
+        $text=sprintf('%s: %s' . PHP_EOL , 'Dffdgd', $telegramUser['from']['id']);
+        $text.=sprintf('%s: %s' . PHP_EOL , 'Dffdgd', $telegramUser['from']['username']);
 
         $this->replyWithMessage(compact('text'));
+
     }
 }
