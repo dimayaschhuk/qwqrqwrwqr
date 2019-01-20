@@ -6,12 +6,12 @@ use App\User;
 use Telegram\Bot\Commands\Command;
 use Telegram\Bot\Actions;
 
-class TestCommand extends Command
+class FirstCommand extends Command
 {
 
-    protected $name = 'test';
+    protected $name = 'first';
 
-    
+
     protected $description = 'TestCommand command, Get a list of commands';
 
     public function handle()
