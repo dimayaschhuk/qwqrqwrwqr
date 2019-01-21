@@ -26,8 +26,8 @@ Route::middleware(['auth'])->prefix('admin')->namespace('Backend')->name('admin.
 
 });
 
-Route::post(Telegram::getAccessToken(),function (){
-    Telegram::commandsHandler(TRUE);
+Route::post(\Telegram::getAccessToken(),function (){
+    \Telegram::commandsHandler(TRUE);
 });
 
 Auth::routes();
