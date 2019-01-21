@@ -31,11 +31,11 @@ return [
     |                       Acme\Project\Commands\BotFather\ByeCommand::class,
     |             ]
     */
-    'bot_token'=>env('TELEGRAM_BOT_TOKEN','779486044:AAGWMV_GKkmMJ-_J7DIWEZ7PPCXHsxvKdKA'),
+//    'bot_token'=>env('TELEGRAM_BOT_TOKEN','779486044:AAGWMV_GKkmMJ-_J7DIWEZ7PPCXHsxvKdKA'),
     'bots'                         => [
         'mybot' => [
             'username'            => 'TelegramBot',
-            'token'               => env('TELEGRAM_BOT_TOKEN', 'YOUR-BOT-TOKEN'),
+            'token'               => env('TELEGRAM_BOT_TOKEN', '779486044:AAGWMV_GKkmMJ-_J7DIWEZ7PPCXHsxvKdKA'),
             'certificate_path'    => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
             'webhook_url'         => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands'            => [
