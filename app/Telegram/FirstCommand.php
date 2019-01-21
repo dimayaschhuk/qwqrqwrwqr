@@ -15,7 +15,7 @@ class FirstCommand extends Command
 
     protected $description = 'FirstCommandFirstCommand';
 
-    public function handle()
+    public function handle($arguments)
     {
         Log::info('TestCommand');
         $this->replyWithChatAction(['action' => Actions::TYPING]);
